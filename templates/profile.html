@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if user %}
+
+<main id="bootstrap-overrides">
+  <div class="team row">
+                <div class="col-md-12 col-12 text-center justify-content-center card-alignment">
+
+
+                          <!-- Card w/ Carousel -->
+                          <div class="col-md-12 col-12 card-alignment">
+                            <!-- Carousel Start -->
+
+                              <div class="carousel-inner">
+
+                                  <div class="carousel-item active text-center">
+                                      <!-- Card 2 -->
+                                    <div class="profile-card mr-2 d-inline-block">
+                                      <div class="profile-card">
+                                          <div class="card-img-top">
+                                            <img src="../static/img/icons/logo-img-white.svg" alt="Member" class="img-fluid rounded-circle w-50 p-4">
+                                          </div>
+                                        <div class="card-body">
+                                          <h1 class="profile-card-title">Welcome {{user.name}}</h1>
+                                          <p class="profile-card-text">It's nice to see you :)</p>
+                                        </div>
+
+                                          <div class="btn-container">
+                                            <a href="/" class="btn A">Home</a>
+                                            <a href="/discover" class="btn btn-2 A">Discover</a>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                </div>
+  </div>
+</main>
+
+{% else %}
+
+<main>
+ <section class="login-container">
+  <div class="loginbox">
+	  <img src="static/img/icons/logo-img-white.svg" alt="logo" class="avatar"/>
+	  <form method="post" action="/login">
+		   <!-- <p>Username</p> -->
+            <input type="text" name="user-name" placeholder="USERNAME"/>
+		   <!-- <p>Email</p> -->
+			<input type="email" name="user-email" placeholder="EMAIL ADDRESS"/>
+		   <!-- <p>Password</p> -->
+			<input type="password" name="user-password" placeholder="PASSWORD"/>
+			<br>
+		    <button type="submit">Login</button>
+	  </form>
+  </div>
+ </section>
+</main>
+
+{% endif %}
+{% endblock content %}

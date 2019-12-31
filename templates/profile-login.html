@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if user %}
+
+
+    <form method="post" action="/profile">
+    </form>
+
+
+{% else %}
+
+<main>
+ <section class="login-container">
+  <div class="loginbox">
+	  <img src="static/img/icons/logo-img-white.svg" alt="logo" class="avatar"/>
+	  <form method="post" action="/login">
+		   <!-- <p>Username</p> -->
+            <input type="text" name="user-name" placeholder="USERNAME"/>
+		   <!-- <p>Email</p> -->
+			<input type="email" name="user-email" placeholder="EMAIL ADDRESS"/>
+		   <!-- <p>Password</p> -->
+			<input type="password" name="user-password" placeholder="PASSWORD"/>
+			<br>
+		    <button type="submit">Login</button>
+	  </form>
+  </div>
+ </section>
+</main>
+
+{% endif %}
+{% endblock content %}
